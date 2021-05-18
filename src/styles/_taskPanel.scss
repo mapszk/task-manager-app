@@ -1,0 +1,62 @@
+@import "./_colors.scss";
+
+.task__panel{
+    font-weight: 500;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.3);
+    backdrop-filter: blur(2px);
+    position: fixed;
+    z-index: 99;
+    opacity: 0;
+    transition: opacity .5s ease-in-out;
+    visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    form{
+        background-color: $blanco;
+        padding: 1rem;
+        border-radius: 1.5rem;
+        width: 300px;
+        label{
+            display: block;
+        }
+        input{
+            display: block;
+            height: 2rem;
+            width: 100%;
+            border-radius: 1.5rem;
+            margin: 1rem 0;
+            border: none;
+            padding: .5rem 1rem;
+        }
+        div{
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            button{
+                cursor: pointer;
+                font-weight: 500;
+                width: 45%;
+                border-radius: 1.5rem;
+                height: 2rem;
+            }
+            #submit_task{
+                background-color: $azul;
+                border: none;
+                color: $blanco;
+            }
+            #cancel_task{
+                border: 2px solid $azul;
+                background-color: $blanco;
+                color: $azul;
+            }
+        }
+    }
+    &.active{
+        opacity: 1;
+        visibility: visible;
+    }
+}

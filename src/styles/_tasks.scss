@@ -1,0 +1,75 @@
+@import "./_colors.scss";
+
+.tasks__head{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1.5rem 0;
+    h2{
+        margin: 0;
+    }
+    button{
+        color: $blanco;
+        font-weight: 500;
+        border-radius: 1rem;
+        border: none;
+        padding: .2rem .5rem;
+        background-color: $azul;
+    }
+}
+.tasks__list{
+    list-style: none;
+    padding: .3rem;
+    margin: 0;
+    height: 350px;
+    overflow-y: auto;
+    background-color: $gris;
+    border-radius: 1.5rem;
+    display: flex;
+    flex-direction: column;
+}
+.task__add{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    button{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 2rem;
+        width: 4rem;
+        height: 4rem;
+        font-size: 2em;
+        color: $blanco;
+        background-color: $azul;
+        border: 10px solid $blanco;
+        margin-top: -1rem;
+        z-index: 1;
+    }
+}
+.task{
+    background-color: white;
+    border-radius: 1.5rem;
+    padding: .65rem 1rem;
+    margin-bottom: .5rem;
+    font-weight: 500;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .task__controls{
+        display: flex;
+    }
+    &.completed{
+        border: 2px solid rgb(102, 197, 102);
+        background-color: rgb(224, 246, 227);
+    }
+    button{
+        background-color: transparent;
+        border: none;
+        font-size: 1.2em;
+        color: rgb(47, 47, 47);
+    }
+    &.off{
+        display: none;
+    }
+}

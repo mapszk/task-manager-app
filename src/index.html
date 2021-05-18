@@ -4,9 +4,53 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/99df4bb1e5.js" crossorigin="anonymous"></script>
     <title>Document</title>
 </head>
 <body>
-    <h1 id="title">testeando</h1>
+    <div class="task__panel">
+        <form>
+            <label for="task_input">New task</label>
+            <input maxlength="40" type="text" name="task" id="task_input">
+            <input id ="task_id" name="task_id" type="hidden">
+            <div>
+                <button id="cancel_task">Cancel</button>
+                <button id="submit_task" type="submit">Add</button>
+            </div>
+        </form>
+    </div>
+    <main class="app">
+        <h1 class="app__title">Task Manager <i class="fas fa-check"></h1>
+        <section class="tasks__section">
+            <div class="tasks__head">
+                <h2>Your tasks</h2>
+                <button id="toggle_completed">Hide completed</button>
+            </div>
+            <ul class="tasks__list">
+                <!-- <li class="task__li">
+                    <div class="task completed">
+                        <div class="task__text" data-id="1">
+                            tarea
+                        </div>
+                        <div class="task__controls">
+                            <button id="toggle_task"><i class="fas fa-check"></i></button>
+                            <button id="edit_task"><i class="fas fa-edit"></i></button>
+                            <button id="delete_task"><i class="fas fa-trash"></i></button>
+                        </div>
+                    </div>
+                </li> -->
+            </ul>
+            <div class="task__add">
+                <button id="add_task"><i class="fas fa-plus"></i></button>
+            </div>
+        </section>
+        <section class="pomodoro__section">
+            <h2 class="pomodoro__title">Pomo-count <i class="far fa-clock"></i></h2>
+            <p class="pomodoro__desc">Having troubles dealing with time and concetration? Try pomodoro. <a href="https://en.wikipedia.org/wiki/Pomodoro_Technique">Learn more.</a></p>
+            <div class="timer">
+
+            </div>
+        </section>
+    </main>
 </body>
 </html>
