@@ -10,7 +10,7 @@
 <body>
     <div class="task__panel">
         <form>
-            <label for="task_input">New task</label>
+            <label id="form__label" for="task_input">New task</label>
             <input maxlength="40" type="text" name="task" id="task_input">
             <input id ="task_id" name="task_id" type="hidden">
             <div>
@@ -47,8 +47,13 @@
         <section class="pomodoro__section">
             <h2 class="pomodoro__title">Pomo-count <i class="far fa-clock"></i></h2>
             <p class="pomodoro__desc">Having troubles dealing with time and concetration? Try pomodoro. <a href="https://en.wikipedia.org/wiki/Pomodoro_Technique">Learn more.</a></p>
-            <div class="timer">
-
+            <div id="timer" class="timer" data-times="0">
+                <span id="pomodoro_state">Work time</span>
+                <span id="minutes">25</span>:<span id="seconds">00</span>
+            </div>
+            <div class="timer__controls">
+                <button id="start_timer">Start</button>
+                <button id="pause_timer" disabled>Pause</button>
             </div>
         </section>
     </main>

@@ -1,3 +1,5 @@
+@import "./_colors.scss";
+
 .pomodoro__title{
     text-align: center;
     margin-bottom: .6rem;
@@ -5,4 +7,38 @@
 .pomodoro__desc{
     text-align: center;
     line-height: 1.6rem;
+}
+.timer{
+    font-size: 5em;
+    text-align: center;
+    background-color: $gris;
+    width: 100%;
+    padding: 1rem;
+    border-radius: 1.5rem;
+    &.work{
+        border: 2px solid rgb(182, 62, 62);
+    }
+    &.break{
+        border: 2px solid rgb(102, 197, 102);
+    }
+}
+.timer__controls{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    button{
+        height: 2rem;
+        border-radius: 1.5rem;
+        border: none;
+        background-color: $azul;
+        padding: 0 1rem;
+        font-size: 18px;
+        margin: 1rem .3rem;
+        color: $blanco;
+        font-weight: 500;
+        &[disabled]{
+            opacity: 0.5;
+            cursor: initial;
+        }
+    }
 }

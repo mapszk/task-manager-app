@@ -14,6 +14,7 @@ const handleEdit = (e) => {
     const $tareaText = e.target.parentElement.parentElement.previousElementSibling.textContent.trim()
     $input.value = $tareaText
     $buttonForm.textContent = 'Edit'
+    $input.previousElementSibling.textContent = 'Edit task'
     document.getElementById('task_id').value = id
     document.querySelector('.task__panel').classList.add('active')
     document.body.style.position = 'fixed'

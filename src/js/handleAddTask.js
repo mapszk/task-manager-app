@@ -32,6 +32,7 @@ export default function handleTaskPanel() {
             document.getElementById('task_input').value = ''
             document.getElementById('task_id').value = null
             document.getElementById('submit_task').textContent = 'Add'
+            document.getElementById('form__label').textContent = 'New task'
             document.querySelector('.task__panel').classList.add('active')
             document.body.style.position = 'fixed'
         }
