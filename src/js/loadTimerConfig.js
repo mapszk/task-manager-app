@@ -2,9 +2,8 @@ const $minutes = document.getElementById('minutes')
 const $counter = document.getElementById('pomodoro_counter')
 
 export function getPomodoros() {
-    if(localStorage.getItem('pomodoros')===null){
-        return 0
-    }else return parseInt(localStorage.getItem('pomodoros'))
+    if(localStorage.getItem('pomodoros') === null) return 0
+    else return parseInt(localStorage.getItem('pomodoros'))
 }
 
 export function getTimerConfig(){

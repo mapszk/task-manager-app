@@ -33,7 +33,6 @@ export default function(){
                 $pauseTimerButton.textContent = 'Pause'
                 $startTimerButton.disabled = true
                 $pauseTimerButton.disabled = false
-                const {workTime} = getTimerConfig()
                 minutes = workTime
                 seconds = 0
                 repeats++
@@ -90,7 +89,6 @@ export default function(){
                 $startTimerButton.disabled = true
                 $pauseTimerButton.disabled = false
                 $pauseTimerButton.textContent = 'Skip'
-                const {longBreakTime} = getTimerConfig()
                 minutes = longBreakTime
                 seconds = 0
                 timer = setInterval(() => {
@@ -162,9 +160,9 @@ export default function(){
             $timerPanel.classList.remove('active')
         }
         if(e.target.id === 'submit_timer'){
-            const workTime = Math.floor(parseInt($workTime.value))
-            const shortBreakTime = Math.floor(parseInt($shortBreak.value))
-            const longBreakTime = Math.floor(parseInt($longBreak.value))
+            const workTime = parseInt($workTime.value)
+            const shortBreakTime = parseInt($shortBreak.value)
+            const longBreakTime = parseInt($longBreak.value)
             localStorage.setItem('workTime', workTime.toString())
             localStorage.setItem('shortBreakTime', shortBreakTime.toString())
             localStorage.setItem('longBreakTime', longBreakTime.toString())
