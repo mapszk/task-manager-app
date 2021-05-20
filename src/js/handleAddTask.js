@@ -26,8 +26,8 @@ const editTask = (e) => {
 
 export default function handleTaskPanel() {
     document.addEventListener('click', e=>{
-        e.preventDefault()
         if(e.target.parentElement.id === 'add_task'){
+            e.preventDefault()
             document.getElementById('task_input').value = ''
             document.getElementById('task_id').value = null
             document.getElementById('submit_task').textContent = 'Add'
@@ -35,9 +35,11 @@ export default function handleTaskPanel() {
             document.querySelector('.task__panel').classList.add('active')
         }
         if(e.target.id === 'cancel_task'){
+            e.preventDefault()
             document.querySelector('.task__panel').classList.remove('active')
         }
         if(e.target.id === 'submit_task'){
+            e.preventDefault()
             if(document.getElementById('submit_task').textContent === 'Add') return addTask(e)
             if(document.getElementById('submit_task').textContent === 'Edit') return editTask(e)
         }

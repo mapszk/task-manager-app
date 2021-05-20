@@ -4,6 +4,7 @@ const $buttonForm = document.getElementById('submit_task')
 const $showCompleted = document.getElementById('toggle_completed')
 
 const handleDelete = (e) => {
+    e.preventDefault()
     const id = e.target.parentElement.parentElement.previousElementSibling.dataset.id
     const tasks = getTasks()
     const newTasks = tasks.filter(task => task.id !== parseInt(id))
@@ -11,6 +12,7 @@ const handleDelete = (e) => {
     localStorage.setItem('tasks', JSON.stringify(newTasks))
 }
 const handleEdit = (e) => {
+    e.preventDefault()
     const id = e.target.parentElement.parentElement.previousElementSibling.dataset.id 
     const tareaText = e.target.parentElement.parentElement.previousElementSibling.textContent.trim()
     $input.value = tareaText
@@ -20,6 +22,7 @@ const handleEdit = (e) => {
     document.querySelector('.task__panel').classList.add('active')
 }
 const handleToggle = (e) => {
+    e.preventDefault()
     const id = e.target.parentElement.parentElement.previousElementSibling.dataset.id
     const tasks = getTasks()
     const newTasks = tasks.map(task => task.id === parseInt(id) ? {...task, completed: !task.completed} : task)
@@ -32,7 +35,6 @@ const handleToggle = (e) => {
 
 export default function handleTaskControls() {
     document.addEventListener('click', e=>{
-        e.preventDefault()
         switch (e.target.parentElement.id){
             case "delete_task":
                 return handleDelete(e)
