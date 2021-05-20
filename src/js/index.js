@@ -1,5 +1,6 @@
 import '../styles/main.scss'
 import '../static/logo-ojo.png'
+import '../static/favicon.ico'
 import handleTaskControls from './handleTaskControls'
 import handleTaskPanel from './handleAddTask'
 import loadTasks from './loadTasks'
