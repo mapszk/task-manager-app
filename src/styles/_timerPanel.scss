@@ -1,6 +1,6 @@
 @import "./_colors.scss";
 
-.task__panel{
+.timer__panel{
     font-weight: 500;
     top: 0;
     left: 0;
@@ -46,12 +46,12 @@
                 border-radius: 1.5rem;
                 height: 2rem;
             }
-            #submit_task{
+            #submit_timer{
                 background-color: $azul;
                 border: none;
                 color: $blanco;
             }
-            #cancel_task{
+            #cancel_timer{
                 border: 2px solid $azul;
                 background-color: $blanco;
                 color: $azul;

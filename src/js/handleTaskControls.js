@@ -18,7 +18,6 @@ const handleEdit = (e) => {
     $input.previousElementSibling.textContent = 'Edit task'
     document.getElementById('task_id').value = id
     document.querySelector('.task__panel').classList.add('active')
-    document.body.style.position = 'fixed'
 }
 const handleToggle = (e) => {
     const id = e.target.parentElement.parentElement.previousElementSibling.dataset.id
