@@ -22,7 +22,7 @@ export default function(){
                 $pauseTimerButton.textContent = 'Pause'
                 $startTimerButton.disabled = true
                 $pauseTimerButton.disabled = false
-                minutes = 1
+                minutes = 25
                 seconds = 0
                 repeats++
                 timer = setInterval(() => {
@@ -42,7 +42,7 @@ export default function(){
                         seconds = 59
                         minutes--
                     }else seconds--
-                }, 100);
+                }, 1000);
             }else if($minutes.textContent === '5'){
                 $timer.classList.add('break')
                 $timer.classList.remove('work')
@@ -50,7 +50,7 @@ export default function(){
                 $startTimerButton.disabled = true
                 $pauseTimerButton.disabled = false
                 $pauseTimerButton.textContent = 'Skip'
-                minutes = 1
+                minutes = 5
                 seconds = 0
                 timer = setInterval(() => {
                     $minutes.textContent = minutes
@@ -67,7 +67,7 @@ export default function(){
                         seconds = 59
                         minutes--
                     }else seconds--
-                }, 100);
+                }, 1000);
             }else{
                 $timer.classList.add('break')
                 $timer.classList.remove('work')
@@ -75,7 +75,7 @@ export default function(){
                 $startTimerButton.disabled = true
                 $pauseTimerButton.disabled = false
                 $pauseTimerButton.textContent = 'Skip'
-                minutes = 1
+                minutes = 15
                 seconds = 0
                 timer = setInterval(() => {
                     $minutes.textContent = minutes
@@ -93,7 +93,7 @@ export default function(){
                         seconds = 59
                         minutes--
                     }else seconds--
-                }, 100);
+                }, 1000);
             }
         }
         if(e.target.id === 'pause_timer'){
@@ -119,7 +119,7 @@ export default function(){
                         seconds = 59
                         minutes--
                     }else seconds--
-                }, 100);
+                }, 1000);
                 $pauseTimerButton.textContent = 'Pause'
             }
             if(e.target.textContent === 'Skip'){
