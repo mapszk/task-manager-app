@@ -7,7 +7,7 @@ export default function loadTasks(){
         const li = document.createElement('li')
         li.classList.add('task__li')
         li.innerHTML = `
-            <div class="task ${task.completed ? 'completed' : null}">
+            <div class="task ${task.completed ? 'completed' : ''}">
                 <div class="task__text" data-id="${task.id}">
                     ${task.text}
                 </div>

@@ -1,18 +1,19 @@
 import getTasks from "./getTasks"
+const $input = document.getElementById('task_input')
+const $buttonForm = document.getElementById('submit_task')
+const $showCompleted = document.getElementById('toggle_completed')
 
 const handleDelete = (e) => {
     const id = e.target.parentElement.parentElement.previousElementSibling.dataset.id
-    e.target.parentElement.parentElement.parentElement.parentElement.remove()
     const tasks = getTasks()
     const newTasks = tasks.filter(task => task.id !== parseInt(id))
+    e.target.parentElement.parentElement.parentElement.parentElement.remove()
     localStorage.setItem('tasks', JSON.stringify(newTasks))
 }
 const handleEdit = (e) => {
-    const $input = document.getElementById('task_input')
     const id = e.target.parentElement.parentElement.previousElementSibling.dataset.id 
-    const $buttonForm = document.getElementById('submit_task')
-    const $tareaText = e.target.parentElement.parentElement.previousElementSibling.textContent.trim()
-    $input.value = $tareaText
+    const tareaText = e.target.parentElement.parentElement.previousElementSibling.textContent.trim()
+    $input.value = tareaText
     $buttonForm.textContent = 'Edit'
     $input.previousElementSibling.textContent = 'Edit task'
     document.getElementById('task_id').value = id
@@ -25,7 +26,6 @@ const handleToggle = (e) => {
     const newTasks = tasks.map(task => task.id === parseInt(id) ? {...task, completed: !task.completed} : task)
     localStorage.setItem('tasks', JSON.stringify(newTasks))
     e.target.parentElement.parentElement.parentElement.classList.toggle('completed')
-    const $showCompleted = document.getElementById('toggle_completed')
     if($showCompleted.textContent === 'Show completed'){
         e.target.parentElement.parentElement.parentElement.parentElement.style.display = 'none'
     }

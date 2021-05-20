@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;800&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/99df4bb1e5.js" crossorigin="anonymous"></script>
     <title>Document</title>
 </head>
@@ -20,7 +22,9 @@
         </form>
     </div>
     <main class="app">
-        <h1 class="app__title">Task Manager <i class="fas fa-check"></h1>
+        <div class="app__title">
+            <h1>Task Manager <i class="fas fa-check"></h1>
+        </div>
         <section class="tasks__section">
             <div class="tasks__head">
                 <h2>Your tasks</h2>
@@ -47,9 +51,12 @@
         <section class="pomodoro__section">
             <h2 class="pomodoro__title">Pomo-count <i class="far fa-clock"></i></h2>
             <p class="pomodoro__desc">Having troubles dealing with time and concetration? Try pomodoro. <a href="https://en.wikipedia.org/wiki/Pomodoro_Technique">Learn more.</a></p>
-            <div id="timer" class="timer" data-times="0">
+            <div id="timer" class="timer">
                 <span id="pomodoro_state">Work time</span>
-                <span id="minutes">25</span>:<span id="seconds">00</span>
+                <div>
+                    <span id="minutes">25</span>:<span id="seconds">00</span>
+                </div>
+                <span id="pomodoro_counter"></span>
             </div>
             <div class="timer__controls">
                 <button id="start_timer">Start</button>
@@ -57,5 +64,11 @@
             </div>
         </section>
     </main>
+    <footer>
+        <span>Developed by Martin Pilaszek</span>
+        <a href="https://www.pzk.com.ar" target="_blank">
+            <img src="./static/logo-ojo.png" alt="logo">
+        </a>
+    </footer>
 </body>
 </html>

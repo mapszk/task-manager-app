@@ -21,7 +21,6 @@ const editTask = (e) => {
     localStorage.setItem('tasks', JSON.stringify(newTasks))
 
     document.querySelector('.task__panel').classList.remove('active')
-    document.body.style.position = 'initial';
     location.reload()
 }
 
@@ -34,11 +33,9 @@ export default function handleTaskPanel() {
             document.getElementById('submit_task').textContent = 'Add'
             document.getElementById('form__label').textContent = 'New task'
             document.querySelector('.task__panel').classList.add('active')
-            document.body.style.position = 'fixed'
         }
         if(e.target.id === 'cancel_task'){
             document.querySelector('.task__panel').classList.remove('active')
-            document.body.style.position = 'initial';
         }
         if(e.target.id === 'submit_task'){
             if(document.getElementById('submit_task').textContent === 'Add') return addTask(e)

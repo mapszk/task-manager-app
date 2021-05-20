@@ -24,4 +24,32 @@ main{
     text-align: center;
     margin: 0;
     color: $azul;
+    grid-area: title;
+}
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 2rem;
+    font-size: .8rem;
+    color: black;
+    img{
+        width: 20px;
+        margin-left: .5rem;
+    }
+}
+
+@media screen and (min-width: 860px){
+    main{
+        display: grid;
+        margin: .5rem auto;
+        max-width: 960px;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 60px 1fr;
+        grid-template-areas: "title title" "tasks pomodoro";
+        height: calc(100vh - 3rem);
+    }
+    .pomodoro__section, .tasks__section{
+        padding: 1rem;
+    }
 }

@@ -1,5 +1,8 @@
 @import "./_colors.scss";
 
+.tasks__section{
+    grid-area: tasks;
+}
 .tasks__head{
     display: flex;
     justify-content: space-between;
