@@ -1,4 +1,11 @@
 const $minutes = document.getElementById('minutes')
+const $counter = document.getElementById('pomodoro_counter')
+
+export function getPomodoros() {
+    if(localStorage.getItem('pomodoros')===null){
+        return 0
+    }else return parseInt(localStorage.getItem('pomodoros'))
+}
 
 export function getTimerConfig(){
     let workTime, shortBreakTime, longBreakTime;
@@ -14,4 +21,5 @@ export function getTimerConfig(){
 export default function loadTimerConfig(){
     const {workTime} = getTimerConfig()
     $minutes.textContent = workTime
+    $counter.textContent = getPomodoros() > 0 ? `You've completed ${getPomodoros()} pomodoros` : null
 }

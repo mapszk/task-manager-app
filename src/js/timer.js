@@ -1,4 +1,4 @@
-import { getTimerConfig } from "./loadTimerConfig"
+import { getPomodoros, getTimerConfig } from "./loadTimerConfig"
 
 const $startTimerButton = document.getElementById('start_timer')
 const $pauseTimerButton = document.getElementById('pause_timer')
@@ -19,11 +19,12 @@ let minutes
 let seconds
 let timer
 let repeats = 0
-let pomo = 0
+let pomodoros = getPomodoros()
 
 export default function(){
     const {workTime, shortBreakTime, longBreakTime} = getTimerConfig()
     document.addEventListener('click', e=>{
+        /* start and pause timer */
         if(e.target.id === 'start_timer'){
             if($minutes.textContent == workTime){
                 $timer.classList.add('work')
@@ -48,8 +49,9 @@ export default function(){
                         $timer.classList.add('break')
                         $timer.classList.remove('work')
                         $title.textContent = repeats === 4 ? 'Long break' : 'Short break'
-                        pomo++
-                        $counter.textContent = `You've completed ${pomo} pomodoros`
+                        pomodoros++
+                        localStorage.setItem('pomodoros', pomodoros)
+                        $counter.textContent = `You've completed ${pomodoros} pomodoros`
                     }else if(seconds === 0){
                         seconds = 59
                         minutes--
@@ -129,8 +131,9 @@ export default function(){
                         $timer.classList.add('break')
                         $timer.classList.remove('work')
                         $title.textContent = repeats === 4 ? 'Long break' : 'Short break'
-                        pomo++
-                        $counter.textContent = `You've completed ${pomo} pomodoros`
+                        pomodoros++
+                        localStorage.setItem('pomodoros', pomodoros)
+                        $counter.textContent = `You've completed ${pomodoros} pomodoros`
                     }else if(seconds === 0){
                         seconds = 59
                         minutes--
@@ -166,6 +169,13 @@ export default function(){
             localStorage.setItem('shortBreakTime', shortBreakTime.toString())
             localStorage.setItem('longBreakTime', longBreakTime.toString())
             $timerPanel.classList.remove('active')
+            location.reload()
+        }
+
+        /* restart counter */
+        if(e.target.id === 'restart_counter'){
+            e.preventDefault()
+            localStorage.setItem('pomodoros', '0')
             location.reload()
         }
     })
